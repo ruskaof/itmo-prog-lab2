@@ -1,0 +1,132 @@
+@startuml "class diagram"
+
+abstract class Move{
+
+}
+
+class DamageMove{
+
+}
+
+class StatusMove{
+
+}
+
+class Aerial_Ace {
+    +Aerial_Ace()
+    #checkAccuracy(): void
+    #describe(): string
+}
+
+class Blizzard {
+    +Blizzard()
+    #applyOppEffects(): void
+    #describe(): string
+}
+
+class Body_Slam {
+    +BodySlam()
+    #applyOppEffects(): void
+    #describe(): String
+}
+
+class Charge_Beam{
+    +Charge_Beam()
+    #applySelfEffects(): void
+}
+
+class Double_Team{
+    +DoubleTeam()
+    #describe() : String
+    #applySelfEffects() : void
+}
+
+
+class Facade{
+    +Facade()
+    #calcBaseDamage() : double
+    #describe() : String
+}
+
+class Leer {
+    +Leer()
+    #applyOppEffects(): void
+    #describe(): String
+}
+
+class Pound {
+    +Pound
+    #describe(): String
+}
+
+class  Rock_Tomb {
+    +Rock_Tomb()
+    #applyOppEffects(): void
+    #describe(): String
+}
+
+class Stone_Edge{
+    +Stone_Edge()
+    #calcCriticalHit(): double
+    #describe(): String
+}
+
+class Swagger {
+    +Swagger()
+    #applyOppEffects() : void
+    #describe() : String
+}
+
+
+StatusMove --|> Move
+DamageMove --|> Move
+PhysicalMove --|> DamageMove
+SpecialMove --|> DamageMove
+
+Aerial_Ace --|> PhysicalMove
+Blizzard --|> SpecialMove
+Body_Slam --|> PhysicalMove
+Charge_Beam --|> SpecialMove
+Double_Team  --|> StatusMove
+Facade  --|> PhysicalMove
+Leer --|> StatusMove
+Pound --|> PhysicalMove
+Rock_Tomb --|> PhysicalMove
+Stone_Edge --|> PhysicalMove
+Swagger --|> StatusMove
+
+class Bouffant{
+    +Bouffant()
+}
+
+class Cosmoem {
+    +Cosmoem()
+}
+
+class Munchlax {
+    +Munchlax()
+}
+
+class Nigilego {
+    +Nigilego
+}
+
+class Snorlax {
+    +Snorlax()
+}
+
+class Solgaleo {
+    +Solgaleo
+}
+
+class Pokemon{
+
+}
+
+Bouffant --|> Pokemon
+Cosmoem --|> Pokemon
+Munchlax --|> Pokemon
+Nigilego --|> Pokemon
+Snorlax --|> Munchlax
+Solgaleo --|> Cosmoem
+@enduml
